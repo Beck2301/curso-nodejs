@@ -20,7 +20,8 @@ function theServer(req, res) {
     console.log(req.url);
     switch (req.url) {
         case "/hola":
-            res.write("Bienvenido a hola");
+        let saludo = hola();
+            res.write(saludo);
             res.end();
             break;
         case "/node":
@@ -34,3 +35,14 @@ function theServer(req, res) {
     }
 }
 console.log("Escuchando en el puerto 30001")
+
+function hola(){
+    return "hola que tal";
+}
+
+
+// Debugger
+// Node.js viene integrado con un modo de debug para poder conectarnos desde cualquier herramienta de inspección de código a nuestro código de node.js.
+
+// Podemos utilizar en la terminal el flag de --inspect con nodemon
+
